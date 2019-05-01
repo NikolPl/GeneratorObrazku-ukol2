@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello, it's me!</title>
+    <link href="https://fonts.googleapis.com/css?family=Charmonman|Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styly.css"
+          th:href="${'css/styly.css'}"/>
+    <link rel="icon" href="../static/images/favicon.png"
+          th:href="${'images/favicon.png'}"/>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Citáty
+        </h1>
+        <ul>
+            <li><a href="/">Domů</a></li>
+            <li><a href="">Odkaz 1</a></li>
+            <li><a href="">Odkaz 2</a></li>
+            <li><a href="">Odkaz 3</a></li>
+            <li><a href="">Odkaz 4</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="box-1">
+            <h2>
+                Motivační citát:
+
+            </h2>
+            <p th:text="${vyrok}">Zde bude nějaký citát</p>
+
+
+            <img src="../static/images/obr0.jpg" th:src="'images/obr'+${cisloObrazku}+'.JPG'">
+        </div>
+
+        <div class="box-1">
+            <ul>
+                <li th:each="citat: ${citaty}" th:text="${citat}">Nějaký citát</li>
+                <!-- zde bude tolik li, kolik je proměnných citat, která obsahuje jednu položku ze seznamu citaty, tento citat se vloží do citatu-->
+            </ul>
+        </div>
+
+        <div class="box-1">
+
+
+        </div>
+    </main>
+
+</body>
+</html>
